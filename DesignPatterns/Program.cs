@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Memento;
+﻿using DesignPatterns.Behavioral.Memento;
+using DesignPatterns.Behavioral.State;
 using System;
 
 namespace DesignPatterns
@@ -6,6 +7,29 @@ namespace DesignPatterns
     class Program
     {
         static void Main(string[] args)
+        {
+            //TestMemento();
+            TestState();
+            
+        }
+
+
+        public static void TestState()
+        {
+            ITool tool = new Selection();
+            var canvas = new Canvas();
+
+            canvas.MouseDown();
+            canvas.MouseUp();
+
+            tool = new Brush();
+            canvas.SelectTool(tool);
+
+            canvas.MouseDown();
+            canvas.MouseUp();
+        }
+
+        public static void TestMemento()
         {
             var editor = new Editor();
             var history = new History<EditorState>();
@@ -22,7 +46,6 @@ namespace DesignPatterns
 
             editor.RestoreState(history.Pop());
             Console.WriteLine(editor.Content);
-            
         }
     }
 }

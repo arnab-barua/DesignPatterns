@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DesignPatterns.Memento
+namespace DesignPatterns.Behavioral.Memento
 {
     // In Memento pattern this class is called the Caretaker.
     // This class is made Generic for reuse purpose.

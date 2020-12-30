@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Memento
+﻿namespace DesignPatterns.Behavioral.Memento
 {
     // In Memento pattern this class is called the Originator
     class Editor
